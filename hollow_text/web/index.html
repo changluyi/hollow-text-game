@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚渊文字 | Hollow Text</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header id="game-header">
+            <h1>虚渊文字</h1>
+            <p class="subtitle">Hollow Text</p>
+        </header>
+
+        <main id="game-main">
+            <div id="output" class="terminal"></div>
+
+            <div id="status-bar" class="hidden">
+                <div class="status-item">
+                    <span class="label">HP</span>
+                    <div class="bar hp-bar">
+                        <div class="bar-fill" id="hp-fill"></div>
+                    </div>
+                    <span class="value" id="hp-value">100/100</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">精力</span>
+                    <div class="bar stamina-bar">
+                        <div class="bar-fill" id="stamina-fill"></div>
+                    </div>
+                    <span class="value" id="stamina-value">20/20</span>
+                </div>
+                <div class="status-item souls">
+                    <span class="label">魂</span>
+                    <span class="value" id="souls-value">0</span>
+                </div>
+            </div>
+
+            <div id="enemy-status" class="hidden">
+                <div class="enemy-name" id="enemy-name"></div>
+                <div class="bar enemy-bar">
+                    <div class="bar-fill" id="enemy-hp-fill"></div>
+                </div>
+                <div class="enemy-action" id="enemy-action"></div>
+            </div>
+
+            <div id="actions" class="hidden"></div>
+
+            <div id="input-area" class="hidden">
+                <input type="text" id="player-input" placeholder="输入指令..." autocomplete="off">
+                <button id="submit-btn">确定</button>
+            </div>
+        </main>
+
+        <footer id="game-footer">
+            <p>在黑暗中前行，以魂为灯</p>
+        </footer>
+    </div>
+
+    <py-config>
+        packages = []
+    </py-config>
+
+    <script type="py" src="game.py"></script>
+</body>
+</html>
